@@ -46,7 +46,7 @@ type BusinessData = {
   primaryFundingGoal: string;
 };
 
-const BusinessPage = () => {
+export default function BusinessPage()  {
   const { user } = useAuth();
   const { selectedProfile, loading: profileLoading } = useProfile();
   
