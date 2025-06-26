@@ -46,7 +46,7 @@ type BusinessData = {
   primaryFundingGoal: string;
 };
 
-export default function BusinessPage()  {
+const BusinessPage = () => {
   const { user } = useAuth();
   const { selectedProfile, loading: profileLoading } = useProfile();
   
@@ -249,6 +249,9 @@ export default function BusinessPage()  {
   );
 
   const renderTabContent = () => {
+     if (!businessData) {
+      return null; 
+    }
     switch (currentTab) {
       case 'Business Overview': return renderBusinessOverview();
       case 'Business Details': return renderBusinessDetails();
@@ -306,3 +309,5 @@ export default function BusinessPage()  {
     </div>
   );
 };
+
+export default BusinessPage;
